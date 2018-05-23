@@ -1,0 +1,45 @@
+n_galaxies: 100
+n_iterations: 3
+mag_bins: 21
+min_mag: 24.0
+max_mag: 28.0
+z_bins: 13
+min_z: 9.6
+max_z: 12.0
+n_bands: 4
+lambda_detection: 15369.14
+detection_band: f160w
+bands:
+- f160w
+- f098m
+- f125w
+- f606w
+zeropoints:
+- 25.9463
+- 25.6674
+- 26.2303
+- 26.0691
+gain_values:
+- 2008.803039
+- 4208.810304
+- 2205.871521
+- 4698
+list_of_fields: ../list.txt
+R_eff: 17.5
+beta_mean: -2.0
+beta_sd: 0.0
+size_pix: 0.08
+path_to_images: ../
+image_name: hlsp_borg_hst_wfc3_par
+types_galaxies: 2
+sersic_indices:
+- 1
+- 4
+fraction_type_galaxies:
+- 0.5
+- 0.5
+ibins: 1
+ebins: 2
+min_sn: 8.0
+dropouts: yes
+de_Vacouleur: yes

@@ -1,0 +1,69 @@
+#-------------------------------- Catalog ------------------------------------
+ 
+CATALOG_TYPE     ASCII_HEAD
+PARAMETERS_NAME  SExtractor_files/default3.param
+ 
+#------------------------------- Extraction ----------------------------------
+ 
+DETECT_TYPE      CCD
+DETECT_MINAREA   9
+DETECT_THRESH    0.7
+ANALYSIS_THRESH  0.7
+ 
+FILTER           Y
+FILTER_NAME      SExtractor_files/gauss_2.0_5x5.conv
+ 
+DEBLEND_NTHRESH  32
+DEBLEND_MINCONT  0.005
+ 
+CLEAN            Y
+CLEAN_PARAM      1.0
+ 
+MASK_TYPE        CORRECT
+ 
+#------------------------------ Photometry -----------------------------------
+ 
+PHOT_APERTURES   2,4,6,8,10
+PHOT_AUTOPARAMS  1.5, 3.5
+PHOT_PETROPARAMS 2.0, 3.5
+
+SATUR_LEVEL      50000.0
+
+MAG_ZEROPOINT    26.0691
+MAG_GAMMA        4.0            
+GAIN             4698
+PIXEL_SCALE      0.08
+ 
+#------------------------- Star/Galaxy Separation ----------------------------
+ 
+SEEING_FWHM      0.2
+STARNNW_NAME     SExtractor_files/default.nnw
+ 
+#------------------------------ Background -----------------------------------
+ 
+BACK_SIZE        64
+BACK_FILTERSIZE  3
+ 
+BACKPHOTO_TYPE   GLOBAL
+ 
+#------------------------------ Check Image ----------------------------------
+
+CHECKIMAGE_TYPE
+CHECKIMAGE_NAME 
+ 
+#--------------------- Memory (change with caution!) -------------------------
+ 
+MEMORY_OBJSTACK  3000
+MEMORY_PIXSTACK  300000
+MEMORY_BUFSIZE   1024
+ 
+#----------------------------- Miscellaneous ---------------------------------
+ 
+VERBOSE_TYPE     NORMAL
+WRITE_XML        N
+XML_NAME         sex.xml
+    
+WEIGHT_IMAGE     ../hlsp_borg_hst_wfc3_par0835+2456_f160w_rms.fits, ../hlsp_borg_hst_wfc3_par0835+2456_f606w_rms.fits 
+CATALOG_NAME test 
+WEIGHT_TYPE MAP_RMS, MAP_RMS
+WEIGHT_GAIN N,N
