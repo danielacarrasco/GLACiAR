@@ -25,7 +25,7 @@ def main(name_band, detection_band, zp, g, path_to_cat, niter, image_name,
         cat (string) = Name of the field for which the simulation is run.
     """
     # Open the example sextractor file from where we will read the lines.
-    f = open('Sextractor_files/parameters.sex', 'r')
+    f = open('SExtractor_files/parameters.sex', 'r')
     k = f.readlines()
     f.close()
     # k_new will have the same written lines than the default file
@@ -52,7 +52,7 @@ def main(name_band, detection_band, zp, g, path_to_cat, niter, image_name,
                            image_name + cat + '_' + detection_band + \
                            '_rms.fits, ' + path_to_cat + image_name + cat + \
                            '_' + name_band + '_rms.fits \n'
-        nf = open('Sextractor_files/parameters_' + name_band + '.sex', 'wb')
+        nf = open('SExtractor_files/parameters_' + name_band + '.sex', 'wb')
         nf.writelines(k_new)
         nf.close()
     else:
@@ -72,7 +72,7 @@ def main(name_band, detection_band, zp, g, path_to_cat, niter, image_name,
                            cat + '_' + detection_band + '_rms.fits, ' + \
                            path_to_cat + image_name+cat + '_' + name_band + \
                            '_rms.fits \n'
-        nf = open('Sextractor_files/parameters_' + name_band + '.sex', 'wb')
+        nf = open('SExtractor_files/parameters_' + name_band + '.sex', 'wb')
         nf.writelines(k_new)
         nf.close()
 
