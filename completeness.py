@@ -312,13 +312,18 @@ def main():
                     m[0] = -100
                     while (m[0] < (parameters['min_mag']) or
                            m[0] > (parameters['max_mag'])):
-                        beta = random.gauss(-2.2, 0.4)
+                        beta = random.gauss(parameters['beta_mean'],
+                                            parameters['beta_sd'])
                         creation_of_galaxy.write_spectrum(
                            parameters['lambda_detection'], magnitude, beta,
                            redshift)
                         m[0] = creation_of_galaxy.mag_band(
                                 parameters['bands'][0],
                                 parameters['zeropoints'][0])
+                    # Generate the spectrum for the actual input magnitude.
+                    creation_of_galaxy.write_spectrum(
+                           parameters['lambda_detection'], m[0], beta,
+                           redshift)
                     # (xpos, ypos) is the position of the center of the
                     # galaxy in the image in pixels.
                     xpos, ypos = creation_of_galaxy.galaxies_positions(
