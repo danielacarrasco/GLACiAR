@@ -45,7 +45,7 @@ if parameters['bands'] is None:
 if parameters['list_of_fields'] is None:
     raise ValueError('Input file with the fields.')
 if parameters['R_eff'] is None:
-    parameters['R_eff'] = 17.5
+    parameters['R_eff'] = 1.075
 if parameters['beta_mean'] is None:
     parameters['beta_mean'] = -2.2
 if parameters['beta_sd'] is None:
@@ -269,9 +269,9 @@ def main():
         # Run for all the required redshifts.
         for j in xrange(parameters['z_bins']):
             redshift = parameters['min_z'] + 0.2*j  # Redshift of the galaxies.
-            Re = parameters['R_eff'] / (redshift+1.0)  # Effective radius.
+            Re = 7 * parameters['R_eff'] / (redshift+1.0)  # Effective radius scaled by z.
             # Diameter of the galaxy stamp.
-            sizegalaxy = int(parameters['R_eff'] * parameters['size_pix'] * 20)
+            sizegalaxy = int(parameters['R_eff'] * parameters['size_pix'] * 325)
             s2 = sizegalaxy/2  # Radius of the galaxy stamp.
             # Stamp with the galaxies.
             galaxy_grid, galaxy_grid_n4 = create_stamps(
